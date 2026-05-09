@@ -24,13 +24,16 @@ class Flames(BaseModel):
     name:str
     partner_name:str
     result:str
-@app.post('/flames')
-def save_data(data:Flames):
-    print(data)
-    query=""" insert into flames(name,partner_name,result) values(%s,%s,%s) """
-    values=(data.name,data.partner_name,data.result)
-    cursor.execute(query,values)
-    db.commit()
-    return{
-        "msg":"data saved successfully"
-    }
+# @app.post('/flames')
+# def save_data(data:Flames):
+#     print(data)
+#     query=""" insert into flames(name,partner_name,result) values(%s,%s,%s) """
+#     values=(data.name,data.partner_name,data.result)
+#     cursor.execute(query,values)
+#     db.commit()
+#     return{
+#         "msg":"data saved successfully"
+#     }
+@app.get("/")
+def home():
+    return {'msg':'backend'}
