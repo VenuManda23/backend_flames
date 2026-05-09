@@ -4,11 +4,11 @@ import mysql.connector
 app = FastAPI()
 
 db = mysql.connector.connect(
-    host="mysql.railway.internal",
+    host="viaduct.proxy.rlwy.net",
     user="root",
     password="URSAOdXORqpmCLoGCBqJbwGyTRCsOCwM",
     database="railway",
-    port=3306
+    port=49965
 )
 
 cursor = db.cursor()
